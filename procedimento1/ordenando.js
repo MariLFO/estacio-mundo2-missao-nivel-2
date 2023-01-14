@@ -23,14 +23,14 @@ particionamento = (vetor, posicaoInicial, posicaoFinal, valorPivot) => {
 }
 
 function add () {
-   
+    alert("apertei add");
 }
 
 function ordenar () {
-
+    alert("apertei ordenar");
 }
 
 function misturar () {
-
+    alert("apertei misturar");
 }
 
