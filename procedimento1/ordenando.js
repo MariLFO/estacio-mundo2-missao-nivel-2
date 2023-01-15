@@ -23,7 +23,12 @@ particionamento = (vetor, posicaoInicial, posicaoFinal, valorPivot) => {
 }
 
 function add () {
-    alert("apertei add");
+    var valor = document.getElementById("valor").value;
+    var valores = document.getElementById("valores");
+    var node = document.createElement("li");
+    var texto = document.createTextNode(valor);
+    node.appendChild(texto);
+    valores.appendChild(node);
 }
 
 function ordenar () {
