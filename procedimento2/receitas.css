@@ -1,4 +1,4 @@
-.pnlCatalogo {
+#pnlCatalogo {
     display: flex;
     flex-direction: row;
 }
