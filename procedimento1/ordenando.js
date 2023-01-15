@@ -44,11 +44,38 @@ selection_sort = (vetor) => {
 } 
 
 quick_sort = (vetor, posicaoInicial, posicaoFinal) => {
-    //...
+    if (posicaoInicial == undefined) {
+        posicaoInicial = 0;
+    }
+    if (posicaoFinal == undefined) {
+        posicaoFinal = vetor.length - 1;
+    }
+    if (posicaoInicial >= posicaoFinal) {
+        return;
+    }
+    
+    // retorna o índice do pivot
+    let index = particionamento(vetor, posicaoInicial, posicaoFinal);
+    
+    // Chamada recursiva, aplicando a mesma lógica para a esquerda e direita
+    quick_sort(vetor, posicaoInicial, index - 1);
+    quick_sort(vetor, index + 1, posicaoFinal);
 }
 
-particionamento = (vetor, posicaoInicial, posicaoFinal, valorPivot) => {
-    //...
+particionamento = (vetor, posicaoInicial, posicaoFinal) => {
+    // Pega o último elemento como o pivot
+    const pivotValue = vetor[posicaoFinal];
+    let pivotIndex = posicaoInicial; 
+    for (let i = posicaoInicial; i < posicaoFinal; i++) {
+        if (vetor[i] < pivotValue) {
+            // Troca elementos
+            swap(vetor, i, pivotIndex);
+            pivotIndex++;
+        }
+    }
+    // Coloca o valor do pivot no centro
+    swap(vetor, pivotIndex, posicaoFinal);
+    return pivotIndex;
 }
 
 function add () {
