@@ -27,7 +27,20 @@ bubble_sort = (vetor) => {
 }
 
 selection_sort = (vetor) => {
-    //...
+    let n = vetor.length;
+        
+    for(let i = 0; i < n; i++) {
+        // Encontra o menor número no sub-conjunto
+        let min = i;
+        for(let j = i+1; j < n; j++){
+            if(vetor[j] < vetor[min]) {
+                min = j; 
+            }
+         }
+         if (min != i) {
+            swap(vetor, i, min);
+         }
+    }
 } 
 
 quick_sort = (vetor, posicaoInicial, posicaoFinal) => {
