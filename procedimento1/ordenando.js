@@ -5,7 +5,10 @@ swap = (vetor, posicao1, posicao2) => {
 }
 
 shuffle = (vetor, trocas) => {
-    //...
+    for (let i = trocas; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        swap(vetor, i, j);
+    }
 }
 
 bubble_sort = (vetor) => {
@@ -102,6 +105,15 @@ function ordenar () {
 }
 
 function misturar () {
-    alert("apertei misturar");
+    var valores = document.getElementById("valores");
+    var vetorValores = Array.from(valores.children).map(e => parseInt(e.innerHTML));
+    shuffle(vetorValores, vetorValores.length-1);
+    valores.innerHTML = "";
+    vetorValores.map(i => {
+        var node = document.createElement("li");
+        var texto = document.createTextNode(i);
+        node.appendChild(texto);
+        valores.appendChild(node);
+    });
 }
 
